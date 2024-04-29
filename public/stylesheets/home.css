@@ -1,0 +1,637 @@
+.modal-post {
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:1200px;
+    background-color: #fff;
+    z-index: 11;
+    display: none;
+    margin:0!important;
+    overflow-y: hidden;
+}
+.usr-img-gps-modal{
+    width: 100%;
+}
+.commentText{
+    width:
+}
+.comment-contentRep{
+    position: relative;
+    top:5px;
+}
+.comment{
+    height:fit-content
+}
+.photo-carousel{
+    width: 50%;
+    height:600px;
+}
+.post-header-modal{
+    width: 100%;
+}
+
+
+.userCommentImg{
+    position: relative;
+    top:5px;
+    left:5px;
+}
+.userCommentImgRep{
+    position: relative;
+    top:5px;
+    left:4px;
+    border-radius: 50%;
+}
+.comment-section{
+    width:49%;
+   height:50%;
+   padding-bottom: 20px;
+}
+.footer-post-details{
+    padding:6px 12px 6px 12px;
+}
+.footer-buttonsLCS span{
+    padding:6px!important;
+    
+}
+.footer-post-details{
+    width: 100%;
+}
+.modal-image{
+    width:592px;
+    height: 592px;
+    
+}
+/* @media(max-width:1200px){
+    .modal-post{
+        width:80%;
+    }
+
+} */
+
+.submitCommentForm .row{
+    width: 100%;
+}
+.submitCommentForm input{
+    
+    border:none!important;
+    outline: none;
+}
+.submitCommentForm input:active{
+    
+    border:none!important;
+}
+.newCommentBtn{
+    cursor: pointer;
+}
+.userCommentImg{
+    border-radius: 50%;
+}
+
+.comment-footer-content{
+    height:fit-content;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.comment-footerRep{
+    width:80%;
+}
+.comment-footer-contentRep{
+    height:fit-content;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.comment-footer-contentHeader{
+    height:fit-content;
+    font-size: 0.85rem;
+    font-weight: 500;
+    position: relative;
+    right: 14px;
+}
+.likeComment{
+    cursor: pointer;
+}
+.comments{
+    height: 100%;
+}
+.commentsContainer{
+    overflow-y: auto;
+    height:400px;
+    width:100%;
+    padding: 0;
+}
+.rowComment{
+    height: 90%!important;
+    width: 100%;
+}
+.modal-comment-footer{
+    height:15%;
+    width: 100%;
+}
+
+.comment-footer-content span:nth-of-type(2){
+   margin:0 10px 0 10px;
+}
+.numOfLikesTriggerBtn{
+    cursor: pointer;
+}
+
+/* @media(min-width:568px){
+    .comments{
+        height: 100%!important;
+    }
+    
+} */
+.closeModal{
+    cursor: pointer;
+    transition: 0.2s;
+}
+.closeModal:hover{
+    transform: scale(1.01);
+}
+
+
+
+/* @media(max-width:568px){
+    .modal-post{
+        width: 95%;
+        height: 90vh; 
+    }
+    .photo-carousel{
+        width: 100%;
+        
+    }
+    .comment-section{
+        width: 100%;
+        
+    }
+    
+} */
+/* .likedButton path{
+ color: red;
+} */
+.liked{
+    fill:red!important;
+}
+.triggerModalViewComments{
+    cursor:pointer;
+}
+.header{
+    height: 10%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.disliked{
+    fill:black!important;
+}
+.numberOfLikes{
+    cursor: pointer;
+}
+.likesTrigger{
+    cursor: pointer;
+}
+.followersList{
+    position: fixed;
+    width:400px;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    background-color: white;
+    border-radius: 10px;
+    height:400px;
+    z-index: 13;
+}
+.likedByList{
+    position: fixed;
+    width:400px;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    background-color: white;
+    border-radius: 10px;
+    height:400px;
+    z-index: 13;
+}
+.closeLikesReply{
+    position: absolute;
+    right:12px;
+    top:8px;
+    z-index: 20;
+    font-size: 0.95rem;
+}
+.likedByReply{
+    position: fixed;
+    width:400px;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    background-color: white;
+    border-radius: 10px;
+    height:400px;
+    overflow-y: scroll;
+    z-index: 100;
+}
+.moveHeader{
+    position: relative;
+    top:-100px;
+    display: none;
+}
+.moveReply{
+    position: relative;
+    top:5px;
+}
+.commentSettingsTrigger{
+    display: none;
+}
+.commentSettingsTrigger:hover{
+    cursor: pointer;
+}
+.comment-content:hover .commentSettingsTrigger{
+    display: inline;
+}
+.commentSettingsTrigger svg:hover{
+    fill:rgb(140, 140, 140)
+}
+.likedByComment{
+    overflow-y: none;
+    position: fixed;
+    width:400px;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    background-color: white;
+    border-radius: 10px;
+    height:400px;
+    z-index: 13;
+}
+.comment-footer-content{
+    height:24px;
+}
+.likedByCommentClientSide{
+    position: fixed;
+    width:420px;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    background-color: white;
+    border-radius: 10px;
+    height:400px;
+    z-index: 13;
+}
+.followBtn{
+    height:30px!important;
+    border-radius:10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: 80px;
+}
+.userLikedComm,.userLikedReply{
+    width: 90%;;
+}
+.clientLikeReply{
+    width:90%;
+    position: relative;
+    left:20px;
+}
+.numOfLikesTriggerReply{
+    cursor:pointer;
+}
+.likesList{
+    overflow-y:auto;
+    height:90%;
+    width:100%;
+}
+.commentLikesList{
+    overflow-y:auto;
+    overflow-x: hidden;
+    height:90%;
+    width:100%!important;
+}
+.replyLikesList{
+    overflow-y:auto;
+    overflow-x: hidden;
+    height:90%;
+    width:100%!important;
+}
+.userLiked{
+    width:90%;
+}
+
+.commentLikesListClientSide{
+    overflow-y:auto;
+    height:90%;
+    width:100%;
+}
+.option-popup {
+    width: 400px;
+    display: none;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    position: fixed;
+    left: 50%;
+    background-color: white;
+    border-radius: 10px;
+    height: fit-content;
+    z-index: 12;
+   
+}
+.commentSettings{
+    width: 400px;
+    display: none;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    position: fixed;
+    left: 50%;
+    background-color: white;
+    border-radius: 10px;
+    height: fit-content;
+    z-index: 17;  
+}
+.option {
+    width: 100%;
+    height: 48px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.option-cancel{
+    cursor: pointer;
+}
+.option:hover{
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+
+}
+
+.deleteForm button{
+
+    background-color: transparent;
+    border: none;
+    color:red
+}
+.commentsContainer{
+    z-index:200;
+}
+.likeCommBtn{
+	cursor:pointer
+  }
+
+.likeCommBtn.disliked:hover{
+	fill:rgba(105, 105, 105,0.7)!important;
+  }
+.likeCommBtn.liked:hover{
+	fill:rgba(255, 0, 0, 0.5)!important;
+  }
+.likeReply.disliked:hover{
+	fill:rgba(105, 105, 105,0.7)!important;
+    cursor: pointer;
+  }
+.likeReply.liked:hover{
+    cursor: pointer;
+	fill:rgba(255, 0, 0, 0.5)!important;
+  }
+.repliesList{
+    position: fixed;
+    width:400px;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    background-color: white;
+    border-radius: 10px;
+    height:400px;
+    z-index: 13;
+}
+
+.comment-header{
+    height:fit-content;
+    min-height: 70px;
+    max-height: 150px;
+    padding-bottom: 5px;;
+    max-height: 150px;;
+    /* height: 70px; */
+    width:400px;
+    top:-80px;
+background-color: rgb(255, 255, 255)!important;
+position: relative;
+
+border-radius: 10px;
+display: block;
+z-index:15
+}
+.submitReplyform{
+position: relative;
+border-radius: 10px;
+width: 400px;
+top:300px;
+padding:0;
+height:40px;
+background-color: white;
+z-index: 14;
+}
+.formInputCommentRep{
+    position: relative;
+    
+}
+.newCommentBtnRep {
+    cursor: pointer;
+}
+.listOfReplies{
+    position: relative;
+    top:-100px;
+    
+    width: 400px;
+    height:400px;
+    border-radius: 10px;
+    z-index: 13;
+    overflow-y:scroll;
+}
+.submitReplyform input{
+    border-radius: 10px;
+    border:none!important;
+    outline: none;
+}
+.submitReplyform input:active{
+    
+    border:none!important;
+}
+.replyButton{
+    cursor: pointer;
+}
+.closeRepliesBtn{
+    cursor: pointer;
+}
+.seeReplies{
+    position: relative;
+    left:59px;
+    width:200px;
+}
+.noReplies{
+    position: fixed;
+    
+    transform: translate(-50%,-50%);
+    top:40%;
+    left:50%;
+}
+.commentText{
+    word-wrap: break-word;
+}
+.commentTextRep{
+    overflow-wrap: break-word;
+}
+.comment-textRep[headercomment="true"]{
+    overflow-y: scroll;
+    max-height: 110px;
+}
+.replyAdapt{
+    overflow-y: scroll;
+    max-height: 110px;
+}
+/* .comment-text[layoutcomment="true"]{
+    position: relative;
+    left:8px;    
+} */
+@media(min-width:768px){
+    .comment-text{
+        position: relative;
+        left:-16px;
+    }
+    .comment-footer-content{
+        position: relative;
+        left:-35px;
+    }
+    
+}
+@media(max-height:870px) and (max-width:768px){
+    .agopost{
+        display: none;
+    }
+    .commentsContainer{
+        margin-top:60px!important;
+    }
+    .footerLikes{
+        padding-bottom: 5px;;
+        border-bottom: none!important;
+    }
+    .comment-footer-content{
+        position: relative;
+        left:-18px;
+    }
+    /* .comment-content{
+        margin-bottom:30px!important;
+    } */
+    /* .seeReplies{
+        width:150px
+    } */
+}
+@media(max-width:768px){
+    /* .commentSettingsTrigger{
+        bottom:43px;
+        left:205px;
+    } */
+    /* .comment-text[layoutcomment="true"]{
+        
+        left:15px;    
+    } */
+    .comment-footer-content{
+        position: relative;
+        left:-15px;
+    }
+    /* .repliesrel{
+        position: relative;
+        left:232px;
+        bottom: 20px;
+    } */
+    .modal-post{
+        width:fit-content;
+        
+        overflow-y: auto;
+        margin-top: 50px;
+    }
+    .modal-image{
+        height:400px;
+        width:400px;
+
+    }
+    .photo-carousel{
+        width:408px;
+        height: 408px;
+       margin-top:58px!important;
+
+    }
+    .comment-section{
+        width:400px;
+        height:400px;
+        padding:0px!important
+    }
+    .commentsContainer{
+        width: 400px!important;
+        margin-top:86px;
+        height:260px!important;
+    }
+    .comments{
+        padding: 0!important;
+    }
+    .post-header[inModal="true"]{
+        position: fixed!important;
+        top:0;
+        width:400px ;
+    }
+    .footer-post-details{
+        position: fixed!important;
+        top:460px;
+        width:400px;
+        padding: 5px 10px 0 10px!important;
+    }
+    .footerLikes{
+        position: fixed!important;
+        top:500px;
+        width:400px!important;
+        padding: 0 15px 0 15px!important;
+    }
+    .modal-comment-footer[inModal="true"]{
+
+        position: sticky!important;
+        bottom:0
+    }
+    .formInputComment{
+        padding-top:10px!important;
+    }
+    .newCommentBtn{
+        padding-top: 10px;
+    }
+   
+    
+}
+@media(max-width:968px){
+    
+    .modal-post{
+        /* width: 90%; */
+        color:rgb(105, 105, 105)
+    }
+}
+.footer-buttonsLCS{
+    background-color: white
+}
+.likedByList button{
+    width: 100%;
+    text-align: center;
+    padding:0!important;
+}
+.likedByComment button{
+    width: 100%;
+    text-align: center;
+    padding:0!important;
+}
+.likedByReply button{
+    width: 100%;
+    text-align: center;
+    padding:0!important;
+}

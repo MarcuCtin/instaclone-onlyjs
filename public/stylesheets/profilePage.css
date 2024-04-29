@@ -1,0 +1,183 @@
+.profileMain{
+    width: 975px;
+    padding:30px 20px 0px;
+    height:100vh;
+    margin-left:auto;
+    margin-right: auto;
+    
+}
+.userImage img{
+    border-radius: 100%;
+}
+.profileHeader{
+    height:150px;
+    margin-bottom:24px;
+}
+.firstDetails col{
+    height:fit-content;
+    
+}
+.firstDetails{
+    width:100%;
+}
+.firstDetails col{
+    width: 100px;
+}
+.firstDetails button{
+    height:32px;
+    font-size: 14px;;
+    font-weight: 500;
+    width:fit-content;
+    padding:0px 16px 0 16px!important;
+}
+.followedByUser{
+    width: 90%;
+}
+.followingUser{
+    width:90%;
+}
+.secondDetails{
+    width:100%;
+    
+}
+.secondDetails b{
+    font-weight: 600;
+}
+.bio{
+    height:100%;
+    position: relative;
+    left:-12px;
+}
+.bioMd{
+    width: 50%;
+    position: relative;
+    left:7%;
+    padding-bottom: 20px;
+
+}
+.mainDetails{
+    position: relative;
+    left: 15px;
+}
+@media(max-width:1046px){
+    .profileMain{
+        margin: 0px!important;
+        
+        }
+    
+    
+}
+.profileLinksContainer{
+    height:52.8px;
+    font:12px;
+    font-weight: 500;
+}
+.secondDetails768{
+    width:100%;
+    height:60px;
+    border-top: 1px black;
+    
+}
+.currentPageProfileLink{
+    border-top:2px solid black;
+}
+.post{
+    width:33%;
+    cursor: pointer;
+    z-index: 0;
+}
+.followersList{
+    position: fixed;
+    width:400px;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    background-color: white;
+    border-radius: 10px;
+    height:400px;
+    z-index: 13;
+}
+.followerList{
+    overflow-y:auto;
+    height:90%;
+    width:100%;
+}
+.commentIcon{
+    position:absolute;
+    z-index: 11;
+    
+    transform: translate(-50%,-50%);
+    margin-top:155px;
+    margin-left: 190px;
+    color:white;
+    display: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0);
+}
+.heartIcon{
+    text-shadow: 20px 20px 20px rgba(0,0,0,0);
+    position:absolute;
+    z-index: 10;
+    font-size: 18px;
+    color:white;
+    font-weight: 600;
+    display: none;
+    transform: translate(-50%,-50%);
+    margin-top:155px;
+    margin-left: 110px;
+}
+.post svg{
+    text-shadow: 20px 20px 20px rgba(0,0,0,0);
+}
+.post:hover .postImage{
+
+     filter:brightness(0.6);  
+}
+.post:hover .heartIcon{
+    display: inline!important;
+}
+.post:hover .commentIcon{
+    display: inline!important;
+
+}
+.postImage{
+    width:100%;
+}
+
+@media(max-width:768px){
+    .profileMain{
+        padding:30px 0 0;
+        height:fit-content!important;
+        margin-bottom: 24px!important;
+    }
+    .firstDetails .btn{
+        padding: 0 8px 0 8px!important;
+    }
+   
+
+    
+}
+@media(max-width:915px){
+    .post{
+        width: 32.7%;
+    }
+}
+@media(max-width:465px){
+    .post{
+        width: 32.5%;
+    }
+    .profileHeader{
+        height:80px;
+    }
+    .userPhoto{
+        width:80px;
+        height:80px;
+    }
+}
+
+.modalPostHidden{
+    position: absolute;
+    top:-600vh;
+    
+}

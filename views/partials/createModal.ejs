@@ -1,0 +1,27 @@
+<div class="modal-container">
+    <div class="modalHeader justify-content-center d-flex p-1 border border-bottom-primary">
+        <h4 class="m-0">Create a new post</h4>
+        
+    </div>
+    <div class="modalBody">
+        <form action="/" method = 'post' novalidate class="validated-form text-center">
+            <div id="image-input-container" class=" mb-2 mx-auto">
+            <label for="image">Image</label>
+            <input type="file" id="image-input" name="post[image]">
+            </div>
+            <img src="" id="image" alt="">
+            <div></div>
+            <div class="description mb-2">
+                <label for="description">Description</label>
+                <input type="text" name="post[description]" id="description">
+            </div>
+            <div class="location mb-2">
+                <label for="location">location</label>
+                <input type="text" name="post[location]" id="location">
+            </div>
+            <button class="btn btn-primary" type="submit">Create</button>
+        </form>
+        <div class="after-form-validated d-none">Post Created</div> 
+        after fetch request display this block and set the form display to none  
+    </div>
+</div>

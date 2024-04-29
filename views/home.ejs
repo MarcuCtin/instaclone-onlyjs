@@ -1,0 +1,945 @@
+<%- layout('boilerplate')%>
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <div comment_id="" data_post_id="" class="likedByComment d-none" client_side="true">
+        <div class="header border-bottom text-center">Likes</div>
+        <div comment_id="" data_post_id=">" class="commentLikesList" client_side="true">
+            xxx
+            <div comment_id="" user_id="<%=currentUser._id%>" data_post_id="" client_side="true"
+                class="userLikedComm d-none mx-auto my-3">
+                <div class="row d-flex p-0 width-80">
+                    <div class="col-2 p-0 text-center d-flex justify-content-center align-items-center">
+                        <img width="36px" height="36px" class="rounded-5"
+                            src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                            alt="">
+                    </div>
+
+                    <div class="col m-0 p-0 d-flex flex-column">
+                        <div><b user_id="<%=currentUser._id%>" data_post_id=""" class=" likedUsernameComm">
+                                <%=currentUser.username%>
+                            </b></div>
+                        <div user_id="<%=currentUser._id%>" comment_id="" class="likedNameComm" height="fit-content"
+                            class="text-muted" style="line-height: 50%; color: rgba(0,0,0,0,1)"></div>
+
+                    </div>
+                    <div class="col-3 p-0 text-center">
+                        <button width="100%" ; class="followBtn my-auto text-center align-self-end p-0 mt-2"
+                            style="color:white;background-color: rgb(49, 114, 255);line-height: 50%;"
+                            height="10px!important">Follow</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="col-8 main-feed">
+
+        <div class="stories-main shadow"></div>
+        <div class="posts-feed d-flex align-items-center flex-column">
+
+
+
+            <% for(let post of posts){ %>
+
+                <article class="post" data-post-id="<%=post._id%>">
+                    <div class="post-header d-flex">
+                        <div class="usr-img-gps d-flex align-items-center">
+                            <div class="header-user-img">
+                                <img width="36px" height="36px"
+                                    src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                    alt="">
+                            </div>
+                            <div class="username-location-header">
+                                <div class="username ">
+                                    <b>
+                                        <a href="/<%=post.author.username%>">
+                                        <%=post.author.username %>
+                                        </a>
+                                    </b>
+
+                                    <span class="text-muted">• 42m</span>
+                                </div>
+                                <div class="location">
+                                    <%=post.location %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-settings d-flex align-items-center">
+                            <button class="post-options" data-post-id="<%=post._id%>">
+                                <svg aria-label="More options" class="_ab6-" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)"
+                                    height="24" role="img" viewBox="0 0 24 24" width="24">
+                                    <circle cx="12" cy="12" r="1.5"></circle>
+                                    <circle cx="6" cy="12" r="1.5"></circle>
+                                    <circle cx="18" cy="12" r="1.5"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="<%=post.images.postImage11%>" class="img-fluid imagePostSrc" alt="">
+                    </div>
+                    <div class="p-1 pt-0 footer-post" data_post_id="<%=post._id%>">
+                        <div class="post-actions m-0 d-flex ">
+                            <button likeModal="false"
+                                class="likeButton <%=post.likedBy.includes(currentUser._id) ?'liked':'disliked' %>"
+                                data_post_id="<%=post._id%>"><svg aria-label="Like" class="x1lliihq x1n2onr6"
+                                    height="24" role="img" viewBox="0 0 24 24" width="24">
+                                    <title>Like</title>
+                                    <path
+                                        d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.260.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
+                                    </path>
+                                </svg></button>
+                            <button class="comment-button" comment_trigger="true" data_post_id="<%=post._id%>"><svg
+                                    aria-label="Comment" class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)"
+                                    fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24">
+                                    <title>Comment</title>
+                                    <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z" fill="none"
+                                        stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg></button>
+                            <button><svg aria-label="Share Post" class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)"
+                                    fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24">
+                                    <title>Share Post</title>
+                                    <line fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"
+                                        x1="22" x2="9.218" y1="3" y2="10.083"></line>
+                                    <polygon fill="none"
+                                        points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"
+                                        stroke="currentColor" stroke-linejoin="round" stroke-width="2"></polygon>
+                                </svg></button>
+                            <button class="ms-auto"><svg aria-label="Save" class="x1lliihq x1n2onr6"
+                                    color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24"
+                                    width="24">
+                                    <title>Save</title>
+                                    <polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21"
+                                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"></polygon>
+                                </svg></button>
+                        </div>
+
+                        <div class="d-flex likesTrigger" inModal="false" data_post_id="<%=post._id%>">
+                            <div class="numberOfLikes m-0" data_post_id="<%=post._id%>">
+                                <%=post.likedBy.length%>
+                            </div>
+                            <b><span>&nbsplikes</span></b>
+                        </div>
+                    </div>
+                    <div class="commentSettings commentSettingsLayout" comment_id="">
+                        
+                            <div class="option deleteComment text-danger" comment_id="">
+                                
+                                Delete
+                            </div>
+                           
+
+                                <div class="option optionFav text-danger" >
+                                    <span>Report</span>
+                                </div>
+                                <div class="option option-cancel" comment_id=""
+                                    ><span>Cancel</span></div>
+                    </div>
+                    <% for(let comment of post.comments) {%>
+                        <div class="commentSettings" data-post-id="<%=post._id%>" comment_id="<%=comment._id%>">
+                            <% if(comment.author._id.equals(currentUser._id)) {%>
+                                <div class="option deleteComment text-danger" comment_id="<%=comment._id%>"
+                                    data_post_id="<%=post._id%>">
+                                    Delete
+                                </div>
+                                <% } %>
+
+                                    <div class="option optionFav text-danger" data-post-id="<%=post._id%>">
+                                        <span>Report</span>
+                                    </div>
+                                    <div class="option option-cancel" comment_id="<%=comment._id%>"
+                                        data-post-id="<%=post._id%>"><span>Cancel</span></div>
+                        </div>
+                        <% } %>
+                            <% for(let comment of post.comments) {%>
+
+                                <div class="commentRepliesMain d-none" comment_id="<%=comment._id%>">
+
+
+                                    <div class="repliesList" comment_id="<%=comment._id%>">
+                                        <% for(let reply of comment.replies){ %>
+                                            <div reply_id="<%=reply._id%>" comment_id="<%=comment._id%>"
+                                                data_post_id="<%=post._id%>" class="likedByReply d-none">
+                                                <span class="closeLikesReply" reply_id="<%=reply._id%>"><b><svg
+                                                            aria-label="Close" class="x1lliihq x1n2onr6"
+                                                            color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="18"
+                                                            role="img" viewBox="0 0 24 24" width="18">
+                                                            <title>Close</title>
+                                                            <line fill="none" stroke="currentColor"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" x1="21" x2="3" y1="3" y2="21"></line>
+                                                            <line fill="none" stroke="currentColor"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" x1="21" x2="3" y1="21" y2="3"></line>
+                                                        </svg></b></span>
+                                                <div class="header border-bottom text-center"><span>Likes</span></div>
+                                                <div reply_id="" comment_id="<%=comment._id%>"
+                                                    data_post_id="<%=post._id%>" class="replyLikesList">
+                                                    <div reply_id="<%=reply._id%>" comment_id=""
+                                                        username="<%=currentUser.username%>" data_post_id=""
+                                                        class=" clientLikeReply mt-2 d-none p-0 width-80">
+                                                        <div class="row d-flex">
+                                                            <div
+                                                                class="col-2 p-0 text-center d-flex justify-content-center align-items-center">
+                                                                <img width="36px" height="36px" class="rounded-5"
+                                                                    src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                                                    alt="" style="border-radius: 100%;">
+                                                            </div>
+                                                            <div class="col m-0 p-0 d-flex flex-column">
+                                                                <div><b reply_id="<%=reply._id%>" comment_id=""
+                                                                        user_username="" data_post_id=""
+                                                                        class="likedUsername">
+                                                                        <%=currentUser.username%>
+                                                                    </b></div>
+                                                                <div reply_id="<%=reply._id%>" comment_id=""
+                                                                    user_username="" class="likedName"
+                                                                    height="fit-content" class="text-muted"
+                                                                    style="line-height: 50%; color: rgba(0,0,0,0,1)">
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-3 p-0 text-center">
+                                                                <button reply_id="<%=reply._id%>" width="100%" ;
+                                                                    class="followBtn my-auto text-center align-self-end px-2 py-0 mt-2"
+                                                                    style="color:white;background-color: rgb(49, 114, 255);line-height: 50%;"
+                                                                    height="10px!important">Follow</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <% if(reply.likedBy && reply.likedBy.length!==0) {%>
+                                                        <% for(let like of reply.likedBy){ %>
+
+                                                            <div reply_id="<%=reply._id%>" comment_id="<%=comment._id%>"
+                                                                like_id="<%=like._id%>" username="<%=like.username%>"
+                                                                data_post_id="<%=post._id%>"
+                                                                class="userLikedReply mt-2 mx-auto my-3">
+                                                                <div class="row d-flex">
+                                                                    <div
+                                                                        class="col-2 text-center d-flex justify-content-center align-items-center">
+                                                                        <img width="36px" height="36px"
+                                                                            class="rounded-5"
+                                                                            src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                                                            alt=""  style="border-radius: 100%;">
+                                                                    </div>
+
+                                                                    <div class="col m-0 p-0 d-flex flex-column">
+                                                                        <div><b reply_id="<%=reply._id%>"
+                                                                                like_id="<%=like._id%>"
+                                                                                data_post_id="<%=post._id%>"
+                                                                                comment_id="<%=comment._id%>"
+                                                                                class="likedUsernameReply">
+                                                                                <%=like.username%>
+                                                                            </b></div>
+                                                                        <div like_id="<%=like._id%>"
+                                                                            comment_id="<%=comment._id%>"
+                                                                            class="likedNameReply" height="fit-content"
+                                                                            class="text-muted"
+                                                                            style="line-height: 50%; color: rgba(0,0,0,0,1)">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-3 text-center">
+                                                                        <button  class=" btn ms-auto followBtn <%=currentUser.following.includes(like._id)?'btn-secondary':'btn-primary'%> my-auto text-center align-self-end  py-0" 
+                                                                            followingState="<%= currentUser.following.includes(like._id)?'true':'false'%>" 
+                                                                            username="<%=like.username%>" followFromPostLikeList="true">
+                                                                            
+                                                                            <%= currentUser.following.includes(like._id)?'Unfollow':'Follow'%> 
+                                                                            </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <% } %>
+                                                                <% } %>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                                <div class="comment-header" comment_id="<%=comment._id%>">
+                                                    <div class="comment-contentRep mb-2 px-2"
+                                                        comment_id="<%=comment._id %>" headercomment="true">
+                                                        <div class="commentRep d-flex">
+                                                            <div class="col p-0 d-flex  justify-content-start">
+                                                                <img width="36px" height="36px"
+                                                                    class="mt-0 my-auto userCommentImgRep"
+                                                                    src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="col-9 ps-0 pt-1 comment-textRep "
+                                                                comment_id="<%=comment._id%>" headercomment="true"><b
+                                                                    class="commentUsernameRep sticky-top"
+                                                                    comment_id="<%= comment._id %>"
+                                                                    headercomment="true">admin</b><span>
+                                                                </span><span class="commentTextRep"
+                                                                    comment_id="<%=comment._id %>" headercomment="true">
+                                                                    <%=comment.body%>
+                                                                </span></div>
+                                                            <div
+                                                                class="col likeCommentSectionRep d-flex pt-1 text-center align-items-start justify-content-center  ">
+                                                                <div>
+                                                                    <svg aria-label="Like"
+                                                                        class="likeCommBtn <%= comment.likedBy.includes(currentUser._id) ? 'liked' : 'disliked'%>"
+                                                                        post_id="<%=post._id%>" inReplyLikeComm="true"
+                                                                        comment_id="<%=comment._id%>"
+                                                                        color="rgb(120, 120, 120)"
+                                                                        fill="rgb(120, 120, 120)" height="14" role="img"
+                                                                        viewBox="0 0 24 24" width="14">
+                                                                        <title>Like</title>
+                                                                        <path
+                                                                            d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
+                                                                        </path>
+
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div
+                                                            class="row comment-footer d-flex justify-content-center p-0 m-0 ">
+                                                            <div class="comment-footer-contentHeader  col-8 p-0 m-0 ">
+                                                                <span class="commentAgo"> 1m ago
+                                                                </span>
+                                                                <span class="numOfLikesTriggerBtnRep"
+                                                                    post_id="<%=post._id%>"
+                                                                    comment_id="<%=comment._id%>"><span
+                                                                        class="numOfCommLikesRep"
+                                                                        comment_id="<%=comment._id%>"
+                                                                        headercomment="true">
+                                                                        <%=comment.likedBy.length%>
+                                                                    </span> likes</span>
+                                                                <span comment_id="<%=comment._id%>"
+                                                                    class="closeReplies">Back to
+                                                                    post</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <form comment_id="<%=comment._id%>"
+                                                    action="/p/<%=post._id%>/comments/<%=comment._id%>/reply"
+                                                    class="submitReplyform validated-form" novalidate
+                                                    comment_id="<%=comment._id%>" method="post">
+                                                    <div class="row d-flex m-0 p-0">
+                                                        <input type="text" class="col-10 p-0 ps-3 formInputCommentRep"
+                                                            data_post_id="<%=post._id%>" placeholder="Add a comment"
+                                                            comment_id="<%=comment._id%>">
+                                                        <div class="col-2 justify-content-end d-flex"> <b
+                                                                class="newCommentBtnRep "
+                                                                comment_id="<%=comment._id%>">Reply</b></div>
+                                                    </div>
+                                                </form>
+                                                <div class="overlay3"></div>
+                                                <div class="listOfReplies ps-2 pb-5" comment_id="<%=comment._id%>">
+
+                                                    <div class="comment-contentRep replyLayout mb-2 d-none"
+                                                        comment_id="<%=comment._id %>" reply_id="">
+                                                        <div class="commentRep d-flex" reply_id="">
+                                                            <div class="col p-0 d-flex  justify-content-start">
+                                                                <img width="36px" height="36px"
+                                                                    class="mt-0 my-auto userCommentImgRep"
+                                                                    src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                                                    alt="">
+                                                            </div>
+                                                            <div comment_id="<%=comment._id%>"
+                                                                class="col-9 ps-0 pt-1 comment-textRep " reply_id=""
+                                                                reply="true">
+                                                                <b class="commentUsernameRep" reply_id=""
+                                                                    comment_id="<%= comment._id%>">
+                                                                </b><span> </span><span class="commentTextRep"
+                                                                    reply_id="" comment_id="<%=comment._id %>">
+                                                                    Lorem ipsum dolor s
+                                                                </span>
+                                                            </div>
+                                                            <div
+                                                                class="col likeCommentSectionRep d-flex pt-1 text-center align-items-start justify-content-center  ">
+                                                                <div>
+                                                                    <svg aria-label="Like" class="disliked"
+                                                                        post_id="<%=post._id%>" reply_id=""
+                                                                        comment_id="<%=comment._id%>"
+                                                                        color="rgb(120, 120, 120)"
+                                                                        fill="rgb(120, 120, 120)" height="14" role="img"
+                                                                        viewBox="0 0 24 24" width="14">
+                                                                        <title>Like</title>
+                                                                        <path
+                                                                            d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
+                                                                        </path>
+
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="row comment-footerRep d-flex justify-content-center p-0 m-0 ">
+                                                            <div class="comment-footer-contentRep col-8 p-0 m-0 ">
+                                                                <span class="commentAgo"> 1m ago
+                                                                </span>
+                                                                <span class="numOfLikesTriggerReply" reply_id=""
+                                                                    post_id="<%=post._id%>"
+                                                                    comment_id="<%=comment._id%>">
+                                                                    <span class="numOfLikesReply" reply_id=""
+                                                                        comment_id="<%=comment._id%>">
+                                                                        0
+                                                                    </span> likes</span>
+                                                                <span comment_id="<%=comment._id%>"
+                                                                    class="closeReplies">Back to
+                                                                    post</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <% if(comment.replies.length===0){ %>
+                                                        <div class="noReplies" comment_id="<%=comment._id%>">
+                                                            <h5>No replies yet</h5>
+                                                        </div>
+
+                                                        <% } else{%>
+                                                            <% for(let reply of comment.replies){%>
+                                                                <div class="comment-contentRep mb-2" serverside="true"
+                                                                    comment_id="<%=comment._id %>"
+                                                                    reply_id="<%=reply._id%>">
+                                                                    <div class="commentRep d-flex"
+                                                                        reply_id="<%=reply._id%>">
+                                                                        <div
+                                                                            class="col p-0 d-flex  justify-content-start">
+                                                                            <img width="36px" height="36px"
+                                                                                class="mt-0 my-auto userCommentImgRep"
+                                                                                src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                                                                alt="">
+                                                                        </div>
+                                                                        <div reply="true"
+                                                                            class="col-9 ps-0 pt-1 comment-textRep "
+                                                                            reply_id="<%=reply._id%>">
+                                                                            <b class="commentUsernameRep"
+                                                                                reply_id="<%=reply._id%>"
+                                                                                comment_id="<%= comment._id%>">
+
+                                                                            </b><span> </span><span
+                                                                                class="commentTextRep"
+                                                                                reply_id="<%=reply._id%>"
+                                                                                comment_id="<%=comment._id %>"
+                                                                                reply="true">
+
+                                                                            </span>
+                                                                        </div>
+                                                                        <div
+                                                                            class="col likeCommentSectionRep d-flex pt-1 text-center align-items-start justify-content-center  ">
+                                                                            <div>
+                                                                                <svg aria-label="Like"
+                                                                                    class="likeReply disliked"
+                                                                                    post_id="<%=post._id%>"
+                                                                                            reply_id="<%=reply._id%>"
+                                                                                                comment_id="<%=comment._id%>"
+                                                                                                    color="rgb(120, 120,
+                                                                                                    120)"
+                                                                                                    fill="rgb(120, 120,
+                                                                                                    120)" height="14"
+                                                                                                    role="img"
+                                                                                                    viewBox="0 0 24 24"
+                                                                                                    width="14">
+                                                                                                    <title>Like</title>
+                                                                                                    <path
+                                                                                                        d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
+                                                                                                    </path>
+
+                                                                                </svg>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="row comment-footerRep d-flex justify-content-center p-0 m-0 ">
+                                                                        <div
+                                                                            class="comment-footer-contentRep col-8 p-0 m-0 ">
+                                                                            <span class="commentAgo me-1"> 1m ago
+                                                                            </span>
+                                                                            <span class="numOfLikesTriggerReply me-1"
+                                                                                reply_id="<%=reply._id%>"
+                                                                                post_id="<%=post._id%>"
+                                                                                comment_id="<%=comment._id%>"><span
+                                                                                    class="numOfLikesReply"
+                                                                                    reply_id="<%=reply._id%>"
+                                                                                    comment_id="<%=comment._id%>">
+                                                                                </span> likes</span>
+                                                                            <!-- <span comment_id="<%=comment._id%>"
+                                                                    class="closeReplies">Back to
+                                                                    post</span> -->
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <% } %>
+                                                                    <% } %>
+                                                </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+                                <div comment_id="<%=comment._id%>" data_post_id="<%=post._id%>"
+                                    class="likedByComment d-none">
+                                    <div class="header border-bottom text-center">Likes</div>
+                                    <div comment_id="<%=comment._id%>" data_post_id="<%=post._id%>"
+                                        class="commentLikesList">
+                                        <div comment_id="" user_id="<%=currentUser._id%>" data_post_id=""
+                                            class="test-likeComm mt-2 d-none p-0 width-80">
+                                            <div class="row  m-1" style="width:410px">
+                                                <div
+                                                    class="col-2 p-0 text-center d-flex justify-content-center align-items-center">
+                                                    <img width="36px" height="36px" class="rounded-5"
+                                                        src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                                        alt="">
+                                                </div>
+                                                <div class="col m-0 p-0 d-flex flex-column">
+                                                    <div><b comment_id="" user_username="" data_post_id=""
+                                                            class="likedUsername">
+                                                            <%=currentUser.username%>
+                                                        </b></div>
+                                                    <div comment_id="" user_username="" class="likedName"
+                                                        height="fit-content" class="text-muted"
+                                                        style="line-height: 50%; color: rgba(0,0,0,0,1)"></div>
+
+                                                </div>
+                                                <div class="col-3 p-0 me-3 text-center">
+                                                    <button width="100%" ;
+                                                        class="followBtn my-auto text-center align-self-end px-2 py-0 mt-2"
+                                                        style="color:white;background-color: rgb(49, 114, 255);line-height: 50%;"
+                                                        height="10px!important">Follow</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% for(let like of comment.likedBy){ %>
+                                            <div comment_id="<%=comment._id%>" user_id="<%=like._id%>"
+                                                data_post_id="<%=post._id%>" class="userLikedComm mt-2 mx-auto my-3">
+                                                <div class="row d-flex">
+                                                    <div
+                                                        class="col-2 text-center d-flex justify-content-center align-items-center">
+                                                        <img width="36px" height="36px" class="rounded-5"
+                                                            src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                                            alt=""  style="border-radius: 100%;">
+                                                    </div>
+
+                                                    <div class="col m-0 p-0 d-flex flex-column">
+                                                        <div><b user_id="<%=like._id%>" data_post_id="<%=post._id%>"
+                                                                comment_id="<%=comment._id%>" class="likedUsernameComm">
+                                                                <%=like.username%>
+                                                            </b></div>
+                                                        <div user_id="<%=like._id%>" comment_id="<%=comment._id%>"
+                                                            class="likedNameComm" height="fit-content"
+                                                            class="text-muted"
+                                                            style="line-height: 50%; color: rgba(0,0,0,0,1)"></div>
+                                                    </div>
+                                                    <div class="col-3 text-center">
+                                                        <button  class=" btn ms-auto followBtn <%=currentUser.following.includes(like._id)?'btn-secondary':'btn-primary'%> my-auto text-center align-self-end  py-0" 
+                                                            followingState="<%= currentUser.following.includes(like._id)?'true':'false'%>" 
+                                                            username="<%=like.username%>" followFromPostLikeList="true">
+                                                            
+                                                            <%= currentUser.following.includes(like._id)?'Unfollow':'Follow'%> 
+                                                            </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <div class="likedByList d-none" data_post_id="<%=post._id%>">
+                                        <div class="header border-bottom text-center">Likes</div>
+                                        <div class="likesList" data_post_id="<%=post._id%>">
+                                            <div class="test-like mx-auto my-3 d-none" user_username="" data_post_id="">
+                                                <div class="row d-flex">
+                                                    <div
+                                                        class="col-2 text-center  d-flex justify-content-center align-items-center p-0">
+                                                        <img width="36px" height="36px" class="rounded-5"
+                                                            src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="col m-0 p-0 d-flex flex-column">
+                                                        <div><b class="likedUserUsername" user_username=""
+                                                                data_post_id=""></b></div>
+                                                        <div class="likedUserName" user_username="" height="fit-content"
+                                                            class="text-muted"
+                                                            style="line-height: 50%; color: rgba(0,0,0,0,1)"></div>
+
+                                                    </div>
+                                                    <div class="col-3 px-2 text-center">
+                                                        <button width="100%" ;
+                                                            class="followBtn my-auto text-center align-self-end px-2 py-0 mt-2"
+                                                            style="color:white;background-color: rgb(49, 114, 255);line-height: 50%;"
+                                                            height="10px!important">Follow</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% for(let like of post.likedBy){ %>
+                                                <div class="userLiked mx-auto my-3" user_username="<%=like._id%>"
+                                                    data_post_id="<%=post._id%>">
+                                                    <div class="row d-flex">
+                                                        <div
+                                                            class="col-2 text-center p-0 d-flex justify-content-center align-items-center">
+                                                            <img width="36px" height="36px" class="rounded-5"
+                                                                src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                                                alt=""  style="border-radius: 100%;">
+                                                        </div>
+                                                        <div class="col m-0 p-0 d-flex flex-column">
+                                                            <div><b class="likedUserUsername"
+                                                                    user_username="<%=like._id%>"
+                                                                    data_post_id="<%=post._id%>"> </b></div>
+                                                            <div class="likedUserName" user_username="<%=like._id%>"
+                                                                height="fit-content" class="text-muted"
+                                                                style="line-height: 50%; color: rgba(0,0,0,0,1)"></div>
+
+                                                        </div>
+                                                        <div class="col-3 px-3 text-center ">
+                                                            <button  class=" btn ms-auto followBtn <%=currentUser.following.includes(like._id)?'btn-secondary':'btn-primary'%> my-auto text-center align-self-end  py-0" 
+                                                                followingState="<%= currentUser.following.includes(like._id)?'true':'false'%>" 
+                                                                username="<%=like.username%>" followFromPostLikeList="true">
+                                                                
+                                                                <%= currentUser.following.includes(like._id)?'Unfollow':'Follow'%> 
+                                                                </button> 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="post-description">
+                                        <b>username <%=post._id%></b>
+                                        <%=post.description%>
+                                    </div>
+                                    <div class="view-all-comments pt-2 text-muted">
+
+                                        <span class="comment-button triggerModalViewComments"
+                                            data_post_id="<%=post._id%>">View all <%= post.comments.length%>
+                                                comments</span>
+
+
+                                    </div>
+                                    <div class="leave-comment-post pt-1 d-flex align-items-center">
+                                        <textarea rows="1" cols="30" type="text"
+                                            placeholder="Add a comment "></textarea>
+                                        <span class="submit-comment d-none">Post</span>
+                                        <!-- if textarea.value ==='' .submit-comment.style.diplay='inline' -->
+                                        <svg aria-label="Emoji" class="x1lliihq x1n2onr6" color="rgb(115, 115, 115)"
+                                            fill="rgb(115, 115, 115)" height="13" role="img" viewBox="0 0 24 24"
+                                            width="13">
+                                            <title>Emoji</title>
+                                            <path
+                                                d="M15.83 10.997a1.167 1.167 0 1 0 1.167 1.167 1.167 1.167 0 0 0-1.167-1.167Zm-6.5 1.167a1.167 1.167 0 1 0-1.166 1.167 1.167 1.167 0 0 0 1.166-1.167Zm5.163 3.24a3.406 3.406 0 0 1-4.982.007 1 1 0 1 0-1.557 1.256 5.397 5.397 0 0 0 8.09 0 1 1 0 0 0-1.55-1.263ZM12 .503a11.5 11.5 0 1 0 11.5 11.5A11.513 11.513 0 0 0 12 .503Zm0 21a9.5 9.5 0 1 1 9.5-9.5 9.51 9.51 0 0 1-9.5 9.5Z">
+                                            </path>
+                                        </svg>
+                                    </div>
+        
+        </article>
+       
+        <div class="overlay"><button class="closeBtn">&times;</button></div>
+        <% } %>
+        </div>
+    </div>
+    <div class="col-4 profile-suggestions">
+        <div class="suggestions shadow">username </div>
+    </div>
+    <% for(let post of posts){ %>
+        <div class="row modal-post modal-content flex-md-row flex-column rounded-3" data_post_id="<%=post._id%>">
+
+            <div class="col-md-6 d-flex p-0 m-0 photo-carousel order-1 justify-content-center ">
+                <img src="<%=post.images.postImage11%>" class="rounded-3 m-1 img-fluid modal-image my-auto " alt="">
+            </div>
+            <div class="col-md-6  mx-1 p-0 justify-self-center  comment-section order-2  " data_post_id="<%=post._id%>">
+
+                <div class="comments px-3">
+                    <div inModal="true" class="post-header  border-md-bottom post-header-modal d-flex">
+                        <div inModal="true" class="usr-img-gps usr-img-gps-modal d-flex align-items-center">
+                            <div class="header-user-img d-flex">
+                                <img width="36px" height="36px" class="my-auto"
+                                    src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                    alt="">
+                            </div>
+                            <div class="username-location-header">
+                                <div class="username">
+                                    <b>
+                                        <%=post.author.username%>
+                                    </b>
+                                    <!-- <b><post.author  %></b> -->
+                                </div>
+                                <div class="location p-0">dwa</div>
+                            </div>
+                            <div class="d-flex ml-auto" style="width:40px">
+                                <b class="closeModal">close</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowComment m-0 p-0 d-flex justify-content-center">
+                        <div class="col-12 commentsContainer p-0 container pt-3" data_post_id="<%=post._id%>">
+                            <div class="test-comment mb-3 d-none ">
+                                <div class="comment d-flex">
+                                    <div class="col d-flex  justify-content-start p-0">
+                                        <img width="36px" height="36px" class="mt-0 my-auto userCommentImg"
+                                            src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                            alt="">
+                                    </div>
+                                    <div class="col-9 ps-0 pt-1 comment-text " layoutcomment="true"><b
+                                            class="commentUsername">username</b><span class="commentText" "> 
+                                                </span></div>
+                                                
+                                                <div class=" col likeCommentSection d-flex pt-1 text-center
+                                            align-items-start justify-content-center ">
+                                                    <svg aria-label=" Like" class="likeCommBtn disliked" post_id=""
+                                            comment_id color="rgb(120, 120, 120)" fill="rgb(120, 120, 120)" height="14"
+                                            role="img" viewBox="0 0 24 24" width="14">
+                                            <title>Like</title>
+                                            <path
+                                                d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
+                                            </path>
+                                            </svg>
+                                    </div>
+                                </div>
+
+
+                                <div class="row comment-footer d-flex justify-content-center p-0 m-0 ">
+                                    <div class="comment-footer-content col-8 p-0 m-0 ">
+                                        <span class="commentAgo">1 m ago</span>
+                                        <span class="numOfLikesTriggerBtn" post_id="" comment_id=""><span
+                                                class="numOfCommLikes" comment_id="">0</span> likes</span>
+                                        <span class="replyButton" comment_id="" post_id="<%=post._id%>">Reply</span>
+
+                                        <span class="seeReplies replyButton d-none" comment_id=""
+                                            post_id="<%=post._id%>">&#x2500;&#x2500;&nbsp;&nbsp; View <span
+                                                class="numOfReplies" comment_id=""></span> replies</span>
+                                        <span class="commentSettingsTrigger" data_post_id="<%=post._id%>" comment_id="">
+                                            <svg aria-label="Comment Options" class="x1lliihq x1n2onr6"
+                                                color="rgb(168, 168, 168)" fill="rgb(168, 168, 168)" height="24"
+                                                role="img" viewBox="0 0 24 24" width="24">
+                                                <title>Comment Options</title>
+                                                <circle cx="12" cy="12" r="1.5"></circle>
+                                                <circle cx="6" cy="12" r="1.5"></circle>
+                                                <circle cx="18" cy="12" r="1.5"></circle>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <% for(let comment of post.comments) {%>
+                                <% if(comment.replies.length!==0) {%>
+
+                                    <div class="comment-content mb-md-2 mb-1" comment_id="<%= comment._id %>"
+                                        data_post_id="<%=post._id%>">
+                                        <% }else{ %>
+                                            <div class="comment-content mb-2" comment_id="<%= comment._id %>"
+                                                data_post_id="<%=post._id%>">
+                                                <% } %>
+                                                    <div class="comment d-flex">
+                                                        <div class="col d-flex  justify-content-start p-0">
+                                                            <img width="36px" height="36px"
+                                                                class="mt-0 my-auto userCommentImg"
+                                                                src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="col-9 ps-0 pt-1 comment-text "><b
+                                                                class="commentUsername"
+                                                                comment_id="<%= comment._id %>"></b><span>
+                                                            </span><span class="commentText"
+                                                                comment_id="<%=comment._id %>">
+                                                            </span></div>
+                                                        <div
+                                                            class="col likeCommentSection d-flex pt-1 text-center align-items-start justify-content-center  ">
+                                                            <div>
+                                                                <svg aria-label="Like"
+                                                                    class="likeCommBtn <%= comment.likedBy.includes(currentUser._id) ? 'liked' : 'disliked'%>"
+                                                                    post_id="<%=post._id%>" inReplyLikeComm="false"
+                                                                    comment_id="<%=comment._id%>"
+                                                                    color="rgb(120, 120, 120)" fill="rgb(120, 120, 120)"
+                                                                    height="14" role="img" viewBox="0 0 24 24"
+                                                                    width="14">
+                                                                    <title>Like</title>
+                                                                    <path
+                                                                        d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
+                                                                    </path>
+
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div
+                                                        class="row comment-footer d-flex justify-content-center p-0 m-0 mb-1">
+                                                        <div class="comment-footer-content col-8 p-0 m-0 width-100">
+                                                            <span class="commentAgo"> 1m ago
+                                                            </span>
+                                                            <span class="numOfLikesTriggerBtn" post_id="<%=post._id%>"
+                                                                comment_id="<%=comment._id%>"><span
+                                                                    class="numOfCommLikes"
+                                                                    comment_id="<%=comment._id%>">
+                                                                    <%=comment.likedBy.length%>
+                                                                </span> likes</span>
+                                                            <span class="replyButton" comment_id="<%=comment._id%>"
+                                                                post_id="<%=post._id%>">Reply </span>
+                                                            <span>
+                                                                <span class="commentSettingsTrigger"
+                                                                    data_post_id="<%=post._id%>"
+                                                                    comment_id="<%=comment._id%>">
+                                                                    <svg aria-label="Comment Options"
+                                                                        class="x1lliihq x1n2onr6"
+                                                                        color="rgb(168, 168, 168)"
+                                                                        fill="rgb(168, 168, 168)" height="24" role="img"
+                                                                        viewBox="0 0 24 24" width="24">
+                                                                        <title>Comment Options</title>
+                                                                        <circle cx="12" cy="12" r="1.5"></circle>
+                                                                        <circle cx="6" cy="12" r="1.5"></circle>
+                                                                        <circle cx="18" cy="12" r="1.5"></circle>
+                                                                    </svg>
+                                                                </span>
+                                                            </span>
+
+
+
+                                                        </div>
+                                                    </div>
+                                                    <% if(comment.replies.length!==0) {%>
+                                                        <span class="seeReplies replyButton"
+                                                            comment_id="<%=comment._id%>"
+                                                            post_id="<%=post._id%>">&#x2500;&#x2500;&nbsp;&nbsp;
+                                                            View (<%=comment.replies.length%>) <span
+                                                                    class="repliesrel">replies</span></span>
+                                                        <% } %>
+                                            </div>
+                                            <% }%>
+
+
+                                    </div>
+                                    <div  class="col-12 p-0 modal-comment-footer border-top border-md-none mt-auto  ">
+                                        <div class="post-actions-desc">
+                                            <div inModal="true"
+                                                class="footer-post-details  border-md-top d-flex justify-content-beetween">
+                                                <div class="footer-buttonsLCS">
+                                                    <button
+                                                        class="btn likeButton likeButton2 p-1 <%=post.likedBy.includes(currentUser._id) ?'liked':'disliked' %>"
+                                                        likeModal="true" data_post_id="<%=post._id%>"><svg
+                                                            aria-label="Like" class="x1lliihq x1n2onr6" height="24"
+                                                            role="img" viewBox="0 0 24 24" width="24">
+                                                            <title>Like</title>
+                                                            <path
+                                                                d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.260.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
+                                                            </path>
+                                                        </svg></button>
+
+                                                    <button class=" btn p-1 comment-button"
+                                                        data_post_id="<%=post._id%>"  style="background-color: white!important;"><svg aria-label="Comment"
+                                                            class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)"
+                                                            fill="rgb(0, 0, 0)" height="24" role="img"
+                                                            viewBox="0 0 24 24" width="24">
+                                                            <title>Comment</title>
+                                                            <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z"
+                                                                fill="none" stroke="currentColor"
+                                                                stroke-linejoin="round" stroke-width="2"></path>
+                                                        </svg></button>
+                                                    <button class="btn p-1"><svg aria-label="Share Post"
+                                                            class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)"
+                                                            fill="rgb(0, 0, 0)" height="24" role="img"
+                                                            viewBox="0 0 24 24" width="24">
+                                                            <title>Share Post</title>
+                                                            <line fill="none" stroke="currentColor"
+                                                                stroke-linejoin="round" stroke-width="2" x1="22"
+                                                                x2="9.218" y1="3" y2="10.083"></line>
+                                                            <polygon fill="none"
+                                                                points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"
+                                                                stroke="currentColor" stroke-linejoin="round"
+                                                                stroke-width="2">
+                                                            </polygon>
+                                                        </svg></button>
+                                                </div>
+                                                <div class="footer-button-save ms-auto">
+                                                    <span><svg aria-label="Save" class="x1lliihq x1n2onr6"
+                                                            color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24"
+                                                            role="img" viewBox="0 0 24 24" width="24">
+                                                            <title>Save</title>
+                                                            <polygon fill="none"
+                                                                points="20 21 12 13.44 4 21 4 3 20 3 20 21"
+                                                                stroke="currentColor" stroke-linecap="round"
+                                                                stroke-linejoin="round" stroke-width="2"></polygon>
+                                                        </svg></span>
+                                                </div>
+
+                                            </div>
+                                            <div inModal="true"
+                                                class="footerLikes d-flex  border-md-none flex-column mt-1 mt-md-0"
+                                                style="width:100%;padding:0 16px 0 16px;height:fit-content">
+                                                <div class="numoflikes likesTrigger me-auto col-12 "
+                                                    style="font-size:0.95rem;height:18px;" data_post_id="<%=post._id%>"
+                                                    inModal="true"> <b class="numOfLikesModal"
+                                                        data_post_id="<%=post._id%>">
+                                                        <%=post.likedBy.length %>
+                                                    </b> <b>likes</b></div>
+                                                <div class="agopost me-auto col-12 text-muted mb-md-3 mb-2 mt-1 mt-md-0"
+                                                    style="font-size:0.8rem;height: 18px;"> 1 day ago</div>
+                                            </div>
+                                            <div class="submitCommentForm " inModal="true">
+                                                <form action="/p/<%=post._id%>/comments"
+                                                    class="validated-form newCommentForm" data_post_id="<%=post._id%>"
+                                                    novalidate method="post">
+                                                    <div class="row d-flex m-0 p-0">
+                                                        <input type="text" name="review[body]"
+                                                            class="col-10 p-0 ps-3 pb-md-3 formInputComment"
+                                                            data_post_id="<%=post._id%>" placeholder="Add a comment">
+                                                        <div class="col-2 p-0 ps-3  pb-md-3 justify-content-end d-flex"
+                                                            style="padding-right: 12px!important;"> <b
+                                                                class="newCommentBtn"
+                                                                data_post_id="<%=post._id%>">Post</b></div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-12 d-sm-none d-block comment-section"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus a unde deserunt nostrum officia ipsam debitis, repudiandae tempora voluptate fuga corporis eum incidunt consequatur pariatur! Molestiae adipisci eum animi deleniti! </div> -->
+
+
+        <div class="box option-popup" data-post-id="<%=post._id%>">
+            <% if(currentUser.username===post.author.username) {%>
+                <div class="option optionDel text-danger" data-post-id="<%=post._id%>">
+                    delete
+                </div>
+                <% } %>
+                    <div class="option optionUnflw text-danger " data-post-id="<%=post._id%>">
+                        <span>Unfollow</span>
+                    </div>
+
+
+                    <div class="option optionFav" data-post-id="<%=post._id%>"><span>Add to favorites</span>
+                    </div>
+
+
+                    <div class="option optionGotopost" data-post-id="<%=post._id%>"><span>Go to post</span>
+                    </div>
+
+
+                    <div class="option optionShareto" data-post-id="<%=post._id%>"><span>Share to <%=post._id%>
+                        </span>
+                    </div>
+
+                    <!-- <a href="">
+                        <div class="option"><span>Copy link</span></div>
+                    </a>
+                    <a href="">
+                        <div class="option"><span>Embed</span></div>
+                    </a> -->
+
+                    <div class="option optionAbout" data-post-id="<%=post._id%>"><span>About this account</span>
+                    </div>
+
+                    <div class="option option-cancel" data-post-id="<%=post._id%>"><span>Cancel</span></div>
+        </div>
+
+            <% } %>
+    <script>
+        const postsData = <% -JSON.stringify(posts) %>
+    </script>
+    <script src="/js/likeLogic.js"></script>
+    <script src="/js/postOptions.js"></script>
+    <script src="/js/postModal.js"></script>
+    <script src="/js/reply.js"></script>
+    <script src="/js/follow.js"></script>

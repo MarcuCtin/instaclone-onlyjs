@@ -1,0 +1,77 @@
+<style>
+    .alert-success{
+        width: fit-content;
+        top:9%;
+        position:fixed;
+        right:-5%;
+        transform: translate(-50%,-50%);
+        text-decoration: none;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        color: rgb(255, 255, 255);
+        background-color: rgba(0, 0, 0, 0.5) ;
+        z-index: 2;
+        border: none;
+    }
+    .alert-danger{
+        width: 20%;
+        top:5%;
+        position:fixed;
+        left:50%;
+        transform: translate(-50%,-50%);
+        text-decoration: none;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        color: rgb(255, 255, 255);
+        background-color: rgba(0, 0, 0, 0.5) ;
+        z-index: 2;
+        border: none;
+    }
+    .close{
+        color: white!important;
+    }
+    .infoPopup{
+        width:150px;
+        height:40px;
+        color: black;
+        background-color: white;
+        position:fixed;
+        right:20px;
+        bottom:20px;
+        z-index:999;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+</style>
+<div class="infoPopup d-flex rounded d-none  ps-2 justify-content-beetween" role="alert">
+    <span class="popupText col-12 my-auto mx-auto pb-1"></span>
+</div>
+<% if(success && success.length) {%>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <%= success %>
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+    </button>
+</div>
+<% } %>
+
+<% if(error && error.length) {%>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <%= error %>
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+    </button>
+</div>
+<% } %>
+<% if(success && success.length) {%>
+<script>
+    
+    // const closeAlert = document.querySelector('.btn-close')
+    // closeAlert.addEventListener('click',function(){
+    //     if(document.querySelector('.alert'))
+    //         document.querySelector('.alert').remove()
+    //     if(document.querySelector('.infoPopup') && document.querySelector('.textPopup'))
+    //         {document.querySelector('.infoPopup').classList.add('d-none')
+    //         document.querySelector('.textPopup').textContent =''
+    //         }
+    //     })
+   
+</script>
+<% } %>

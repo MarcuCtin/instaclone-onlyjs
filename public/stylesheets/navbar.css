@@ -1,0 +1,70 @@
+
+  /* Styling for the modal container */
+  .modal-container {
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 60%;
+    background-color: #fff;
+    z-index: 3;
+    display: none;
+    overflow-y: auto;
+  }a{
+    text-decoration: none!important;
+    color: black!important;
+  }
+  .nav-main-link:hover svg {
+    transform: scale(1.1);
+  }
+  
+  @media(max-width:576px){
+    .modal-container{
+      width: 90%;
+      height: 70%;
+      
+    }
+    
+    
+  }
+  @media(min-width:576px) and (max-width:768px){
+    .modal-container{
+        width: 70%;
+        
+    }
+  }
+  @media (min-width:768px) and (max-width:1200px){
+    .modal-container{
+        width: 50%;
+    }
+  }
+  @media(max-width:768px){
+    .nav-main-link.home{
+      padding:0
+    }
+    .nav-main-link:hover {
+      background-color: transparent!important;
+      cursor: pointer;
+    }
+    .modal-create-trigger{
+      padding-top: 0!important;
+    }
+    
+  }
+  /* Styling for the modal header */
+  
+  /* Styling for the close button */
+ 
+  
+  /* Styling for the modal body */
+  .modalBody {
+    padding: 10px;
+  }
+  
+  
+  /* Styling for the trigger button */
+  .modal-create-trigger {
+    cursor: pointer;
+  }

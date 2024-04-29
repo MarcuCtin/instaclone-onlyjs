@@ -1,0 +1,222 @@
+#post-description{
+    width: 100%;
+    overflow: hidden;
+    border: none;
+    resize: none;
+    border: 1px solid rgba(0, 0, 0, 0.1)!important;
+    border-radius: 5px;
+}
+.image-container{
+    height: fit-content;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    
+    background: linear-gradient(90deg, #ffffff, #ededed, #ffffff);
+    background-size: 600% 600%;
+
+    -webkit-animation:ease 4s ease infinite;
+    -moz-animation:ease 4s ease infinite;
+    animation:ease 4s ease infinite;
+}
+input{
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1.01rem;
+    font-weight: 500;  
+}
+.loadingBackground{
+    background: linear-gradient(90deg, #ffffff, #d2d2d2, #ffffff);
+    background-size: 600% 600%;
+    -webkit-animation:ease 3s ease infinite;
+    -moz-animation:ease 3s ease infinite;
+    animation:ease 3s ease infinite;
+    
+}
+form{
+    width: 100%;
+}
+
+.photo-uploading{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+}
+.photo-uploading label{
+    padding:10px;
+}
+#image button{
+    background-color: red;
+}
+input[type="file"] {
+    display: none;
+}
+article{
+    border: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(69, 146, 255);
+    color: white;
+    width: 50%;
+}
+.post-description{
+    position: relative;
+    border-radius: 5px;
+}
+textarea{
+    outline:none;
+    border-top-left-radius: 5px;
+}
+
+
+.submit-post-button{
+    text-align: center;
+    width:100px!important;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background-color: rgb(69, 146, 255)!important;
+    color: white;
+    display:block ;
+    border-radius: 10px;
+    padding: 0!important;
+    display: none;
+    position:fixed;
+    bottom:52px;
+    transition: 0.1s;
+
+}
+
+@media(min-width:768px){
+    .submit-post-button:hover{
+        width:102px!important;
+        background-color: rgba(69, 146, 255,0.8)!important;
+    }
+}
+
+
+.username-desc{
+    position: absolute;
+    top: 1px;
+    left:1px
+}
+.focusBackground{
+    /* background: linear-gradient(356deg, #ffffff, #c5c5c5)!important;
+    background-size: 400% 400%!important;
+
+    -webkit-animation: ease-in-out 3s ease infinite!important;
+    -moz-animation: ease-in-out 3s ease infinite!important;
+    animation: ease-in-out 3s ease infinite!important; */
+    /* background: linear-gradient(270deg, #ffffff, #a7a7a7);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite; */
+    background: linear-gradient(179deg, #ffffff, #a7a7a7);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 2s ease infinite;
+    -moz-animation: AnimationName 2s ease infinite;
+    animation: AnimationName 2s ease infinite;
+}
+@media(max-width:768px){
+    .submit-post-button:active{
+        width:102px!important;
+        background-color: rgba(69, 146, 255,0.8)!important;
+    }
+    
+}
+@media screen and (max-width:469px){
+    .col-12{
+        width: 100vw!important;
+    }
+    .image-container{
+        height: 100vw;
+    }
+}
+
+@-webkit-keyframes ease{
+    0%{background-position:0% 53%}
+    50%{background-position:100% 48%}
+    100%{background-position:0% 53%}
+}
+@-moz-keyframes ease{
+    0%{background-position:0% 53%}
+    50%{background-position:100% 48%}
+    100%{background-position:0% 53%}
+}
+@keyframes ease{
+    0%{background-position:0% 53%}
+    50%{background-position:100% 48%}
+    100%{background-position:0% 53%}
+}
+@-webkit-keyframes ease-in-out {
+    0%{background-position:45% 0%}
+    50%{background-position:56% 100%}
+    100%{background-position:45% 0%}
+}
+@-moz-keyframes ease-in-out {
+    0%{background-position:45% 0%}
+    50%{background-position:56% 100%}
+    100%{background-position:45% 0%}
+}
+@keyframes ease-in-out {
+    0%{background-position:45% 0%}
+    50%{background-position:56% 100%}
+    100%{background-position:45% 0%}
+}
+@-webkit-keyframes ease-in-out {
+    0%{background-position:41% 0%}
+    50%{background-position:60% 100%}
+    100%{background-position:41% 0%}
+}
+@-moz-keyframes ease-in-out {
+    0%{background-position:41% 0%}
+    50%{background-position:60% 100%}
+    100%{background-position:41% 0%}
+}
+@keyframes ease-in-out {
+    0%{background-position:41% 0%}
+    50%{background-position:60% 100%}
+    100%{background-position:41% 0%}
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:53% 0%}
+    50%{background-position:48% 100%}
+    100%{background-position:53% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:53% 0%}
+    50%{background-position:48% 100%}
+    100%{background-position:53% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:53% 0%}
+    50%{background-position:48% 100%}
+    100%{background-position:53% 0%}
+}
